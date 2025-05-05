@@ -1,54 +1,85 @@
-# AI Newsletter Extraction-Project
-Extract and structure information from newsletter emails using LLMs and traditional NLP tools.
-This project enables automated extraction of key details (like stories, summaries, and categories) from .eml newsletter files, with a focus on accuracy and reproducibility.
+# AI Newsletter Extraction
 
-📦 Project Structure
-<pre> AI-News-Extraction-Projec/ ├── boundaryml/ # Extraction logic (BoundaryML, LLM prompts) │ ├── __init__.py │ ├── email_extraction.py │ └── email_extractor.py ├── data/ │ └── emails/ # Raw .eml newsletter files │ └── email_01.eml ├── evals/ │ └── tool_outputs/ # Extracted JSON outputs from tools ├── labels/ # Manual ground-truth labels for evaluation │ ├── email_01.json │ ├── email_02.json │ └── email_03.json ├── scripts/ # Runner and test scripts │ ├── run_baml_test_suite.py │ ├── test_baml.py │ └── test_newspaper.py ├── tests/ │ └── baml_tests.py ├── .gitignore ├── README.md ├── requirements.txt └── Takeout\ Mail/ # (Optional: Google Takeout raw mail backup) </pre>
-🚀 Features
-LLM Extraction: Uses GPT-4o (via OpenAI API) to extract structured data from newsletter emails.
+Extract and structure information from newsletter emails using LLMs and traditional NLP tools. This project enables automated extraction of key details (like stories, summaries, and categories) from .eml newsletter files, with a focus on accuracy and reproducibility.
 
-Manual Labeling: Supports ground-truth JSON labels for benchmarking.
+## 📦 Project Structure
 
-Prompt Engineering: Easily modify and optimize LLM prompts.
+```plaintext
+AI-News-Extraction-Projec/
+├── boundaryml/                # Extraction logic (BoundaryML, LLM prompts)
+│   ├── __init__.py
+│   ├── email_extraction.py
+│   └── email_extractor.py
+├── data/
+│   └── emails/                # Raw .eml newsletter files
+├── evals/
+│   └── tool_outputs/          # Extracted JSON outputs from tools
+├── labels/                    # Manual ground-truth labels for evaluation
+│   ├── email_01.json
+│   ├── email_02.json
+│   └── email_03.json
+├── scripts/                   # Runner and test scripts
+│   ├── run_baml_test_suite.py
+│   ├── test_baml.py
+│   └── test_newspaper.py
+├── tests/                     # Unit tests
+├── .gitignore
+├── README.md
+└── requirements.txt
+```
 
-Evaluation Suite: Compare tool outputs to manual labels for accuracy assessment.
+## 🚀 Features
 
-Extensible: Add new extraction tools or schemas as needed.
+1. **LLM Extraction**: Uses GPT-4o (via OpenAI API) to extract structured data from newsletter emails.
+2. **Manual Labeling**: Supports ground-truth JSON labels for benchmarking.
+3. **Prompt Engineering**: Easily modify and optimize LLM prompts.
+4. **Evaluation Suite**: Compare tool outputs to manual labels for accuracy assessment.
+5. **Extensible**: Add new extraction tools or schemas as needed.
 
-🛠️ Installation
-Clone the repository:
+## 🛠️ Installation
 
-bash
-git clone https://github.com/yourusername/AI-News-Extraction-Projec.git
-cd AI-News-Extraction-Projec
-Install dependencies:
+1. Clone the repository:
 
-bash
-pip install -r requirements.txt
-Set up your OpenAI API key:
+    ```bash
+    git clone https://github.com/yourusername/AI-News-Extraction-Projec.git
+    cd AI-News-Extraction-Projec
+    ```
 
-Create a .env file in the project root:
+2. Install dependencies:
 
-text
-OPENAI_API_KEY=sk-...your-key-here...
-📥 Usage
-Add your .eml newsletter files to data/emails/.
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-(Optional) Create manual labels in labels/ for evaluation.
+3. Set up your OpenAI API key:
 
-Run the extraction pipeline:
+    Create a `.env` file in the project root with the following content:
 
-bash
-python -m scripts.run_baml_test_suite
-Check extracted outputs in evals/tool_outputs/.
+    ```plaintext
+    OPENAI_API_KEY=sk-...your-key-here...
+    ```
 
-🧪 Evaluation
-Compare the extracted JSON outputs to your manual labels in labels/.
+## 📥 Usage
+
+1. Add your .eml newsletter files to the `data/emails/` folder.
+2. (Optional) Create manual labels in the `labels/` folder for evaluation.
+3. Run the extraction pipeline:
+
+    ```bash
+    python -m scripts.run_baml_test_suite
+    ```
+
+4. Check extracted outputs in `evals/tool_outputs/`.
+
+## 🧪 Evaluation
+
+Compare the extracted JSON outputs to your manual labels in `labels/`.
 
 Use the provided scripts to measure field-level accuracy and assess extraction quality.
 
-📝 Example Label Schema
-json
+## 📝 Example Label Schema
+
+```json
 {
   "source": "Axios PM",
   "date": "2024-04-24",
@@ -63,33 +94,28 @@ json
   ],
   "notes": "This newsletter focused on politics and finance news."
 }
-📊 Results & Reporting
-Outputs are stored in evals/tool_outputs/.
+```
 
-Accuracy metrics and prompt optimization experiments are documented in project markdown files.
+## 📊 Results & Reporting
 
-Use results for further NLP research or downstream analytics.
+- Outputs are stored in `evals/tool_outputs/`.
+- Accuracy metrics and prompt optimization experiments are documented in project markdown files.
+- Use results for further NLP research or downstream analytics.
 
-🤖 Technologies
-Python 3.10+
+## 🤖 Technologies
 
-OpenAI GPT-4o (via openai Python SDK)
+- Python 3.10+
+- OpenAI GPT-4o (via openai Python SDK)
+- python-dotenv for secure API key management
+- Standard libraries: email, json, re, etc.
 
-python-dotenv for secure API key management
+## 🙋‍♂️ Contributing
 
-Standard libraries: email, json, re, etc.
+- Pull requests and suggestions are welcome!
+- Open an issue to discuss improvements or new features.
 
-📚 License
-MIT License.
-See LICENSE for details.
+## ⭐ Acknowledgments
 
-🙋‍♂️ Contributing
-Pull requests and suggestions are welcome!
-Open an issue to discuss improvements or new features.
-
-⭐ Acknowledgments
-OpenAI for LLM APIs
-
-newspaper3k for traditional extraction (if used)
-
-All contributors and testers
+- OpenAI for LLM APIs
+- newspaper3k for traditional extraction (if used)
+- All contributors and testers
