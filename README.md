@@ -3,28 +3,7 @@ Extract and structure information from newsletter emails using LLMs and traditio
 This project enables automated extraction of key details (like stories, summaries, and categories) from .eml newsletter files, with a focus on accuracy and reproducibility.
 
 📦 Project Structure
-text
-AI-News-Extraction-Projec/
-├── boundaryml/                # Extraction logic (BoundaryML, LLM prompts)
-│   ├── __init__.py
-│   ├── email_extraction.py
-│   └── email_extractor.py
-├── data/
-│   └── emails/                # Raw .eml newsletter files
-├── evals/
-│   └── tool_outputs/          # Extracted JSON outputs from tools
-├── labels/                    # Manual ground-truth labels for evaluation
-│   ├── email_01.json
-│   ├── email_02.json
-│   └── email_03.json
-├── scripts/                   # Runner and test scripts
-│   ├── run_baml_test_suite.py
-│   ├── test_baml.py
-│   └── test_newspaper.py
-├── tests/                     # Unit tests
-├── .gitignore
-├── README.md
-└── requirements.txt
+<pre> AI-News-Extraction-Projec/ ├── boundaryml/ # Extraction logic (BoundaryML, LLM prompts) │ ├── __init__.py │ ├── email_extraction.py │ └── email_extractor.py ├── data/ │ └── emails/ # Raw .eml newsletter files │ └── email_01.eml ├── evals/ │ └── tool_outputs/ # Extracted JSON outputs from tools ├── labels/ # Manual ground-truth labels for evaluation │ ├── email_01.json │ ├── email_02.json │ └── email_03.json ├── scripts/ # Runner and test scripts │ ├── run_baml_test_suite.py │ ├── test_baml.py │ └── test_newspaper.py ├── tests/ │ └── baml_tests.py ├── .gitignore ├── README.md ├── requirements.txt └── Takeout\ Mail/ # (Optional: Google Takeout raw mail backup) </pre>
 🚀 Features
 LLM Extraction: Uses GPT-4o (via OpenAI API) to extract structured data from newsletter emails.
 
