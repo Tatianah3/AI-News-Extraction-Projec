@@ -1,1 +1,1 @@
-# AI-News-Extraction-Projec
+# AI-News-Extraction-Project
